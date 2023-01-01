@@ -10,10 +10,14 @@ import { RolesController } from './roles/roles.controller';
 import { RolesModule } from './roles/roles.module';
 import { Role } from './roles/roles.model';
 import { UserRoles } from './roles/user-roles.model';
+import { UsersController } from './users/users.controller';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  controllers: [AppController, RolesController],
-  providers: [AppService, RolesService],
+  controllers: [],
+  // AppController, RolesController
+  providers: [],
+  // AppService, RolesService
   imports: [
     ConfigModule.forRoot({
       envFilePath: `.${process.env.NODE_ENV}.env`,
@@ -30,6 +34,7 @@ import { UserRoles } from './roles/user-roles.model';
     }),
     UsersModule,
     RolesModule,
+    AuthModule,
   ],
 })
 export class AppModule {}
